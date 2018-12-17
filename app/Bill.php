@@ -59,7 +59,7 @@ class Bill extends Model
         	$user_info =  DB::table('users')->select('userName', 'email')->where('userId', '=', $bill->userId)->first();
         	$product_info = DB::table('product')->select('name', 'price')->where('productId', '=', $bill->productId)->first();
         	$quantity = $bill->quantity;
-            if(num == 0){
+            if($num == 0){
                 $billId = $bill->billId;
                 $date = $bill->date;
                 $userId = $bill->userId;
