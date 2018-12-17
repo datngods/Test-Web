@@ -112,7 +112,7 @@
                     <input type="hidden" name="vpc_Merchant" value="ONEPAY" size="20" maxlength="16" />
                     <input type="hidden" name="vpc_AccessCode" value="D67342C2" size="20" maxlength="8" />
                     <input type="hidden" name="vpc_MerchTxnRef" value="<?php echo date ( 'YmdHis' ) . rand (); ?>" size="40" maxlength="40" />
-                    <input type="hidden" name="vpc_OrderInfo" value="{{billId}}" size="20" maxlength="34" />
+                    <input type="hidden" name="vpc_OrderInfo" value="{{$billId}}" size="20" maxlength="34" />
                     <input type="hidden" name="vpc_Amount" value="{{($totalPrice + 30000)*100}}" size="20" maxlength="10" />
                     <input type="hidden" name="vpc_ReturnURL" size="60" value="{{url('/checkout/getresponse')}}" maxlength="300" />
                     <input type="hidden" name="vpc_Version" value="2" size="20" maxlength="8" />
