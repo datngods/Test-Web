@@ -180,7 +180,7 @@
                                             @for($i=0; $i<count($bills); $i++)
                                                 <tr>
                                                     <td class="serial">{{$i."."}}</td>
-                                                    <td>  <span class="name">{{$bills[$i]->User->userName}}</span> </td>
+                                                    <td>  <span class="name">{{$bills[$i]->User['userName']}}</span> </td>
                                                     <td> <span class="product">{{count($bills[$i]->BillDetail)}}</span> </td>
                                                     <td><span class="count">{{$bills[$i]->total}}</span></td>
                                                     <td>

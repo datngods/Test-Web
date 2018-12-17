@@ -32,7 +32,6 @@ class AdminController extends Controller
             }
 
             $num_users = User::count();
-
             $newest_items = Product::Where("quantity", ">", -1)->orderBy('productId', 'desc')->take(10)->get();
             return view('ad-index')->with(['revenue'=>$revenue, 'bills'=>$bills, 'num_items'=>$num_items, 'num_users'=>$num_users, 'newest_items'=>$newest_items]) ;
 
