@@ -51,7 +51,7 @@ class Bill extends Model
  		$bill_infos = '';
         $num = 0;
         foreach ($bill_info as $bill) {
-        	$user_info =  DB::table('user')->select('userName', 'email')->where('userId', '=', $bill->userId)->first();
+        	$user_info =  DB::table('users')->select('userName', 'email')->where('userId', '=', $bill->userId)->first();
         	$product_info = DB::table('product')->select('name', 'price')->where('productId', '=', $bill->productId)->first();
             $billId = $bill->billId;
             $date = $bill->date;
