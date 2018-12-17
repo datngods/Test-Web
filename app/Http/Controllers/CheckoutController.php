@@ -242,7 +242,7 @@ class CheckoutController extends Controller
                 $product = Product::find($productId);
                 $product->quantity = $product->quantity - $quantity;
                 $product->save();
-                BillDetail::createBillDetail(count(Bill::all()), $productId, $quantity);
+                BillDetail::createBillDetail(Bill::getMaxID(), $productId, $quantity);
            }
             
         }elseif ($hashValidated=="INVALID HASH" && $txnResponseCode=="0"){

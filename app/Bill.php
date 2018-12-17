@@ -87,4 +87,10 @@ class Bill extends Model
         $bill_list = Bill::Where([['date', '<=', $to], ['date', '>=', $from]])->get();
         return $bill_list;
     }
+
+    public static function getMaxID(){
+        $max = DB::table('bill')->select(max('billId'));
+        return $max;
+    }
 }
+
