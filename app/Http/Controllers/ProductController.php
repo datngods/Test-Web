@@ -72,7 +72,7 @@ class ProductController extends Controller
 
       
        $key_search =  $request->Search;
-       $products_searched = Product::search( $key_search)->paginate(9);
+       $products_searched = Product::getProductByKey($key_search)->paginate(9);
        foreach($products_searched as $prod){
         $prod->firm;
         $prod->image;
