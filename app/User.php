@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class User extends Model
 {
     public $timestamps = false;
-    protected $table = "user";
+    protected $table = "users";
     protected $primaryKey = "userId";
 
 

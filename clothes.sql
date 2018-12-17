@@ -44,7 +44,7 @@ CREATE TABLE admin (
 -- Đang đổ dữ liệu cho bảng admin
 --
 
-INSERT INTO admin VALUES (1, 'trungtq', '123456', 'trungbka1997@gmail.com', 'abc', '0389721127', 'https://www.facebook.com/trung.tranquang.9484', 'abc.inst', 'abc.twitter');
+INSERT INTO admin VALUES (1, 'datngo', '123123', 'datngo.bk@gmail.com', 'abc', '0981192092', 'test', 'abc.inst', 'abc.twitter');
 
 -- --------------------------------------------------------
 
@@ -163,7 +163,7 @@ CREATE TABLE image (
 -- Đang đổ dữ liệu cho bảng image
 --
 
-INSERT INTO image(imageId, link, productId) VALUES
+INSERT INTO image VALUES
 (46, 'Dresses/1_1.jpg', 1),
 (47, 'Dresses/1_2.jpg', 1),
 (48, 'Dresses/1_3.jpg', 1),
