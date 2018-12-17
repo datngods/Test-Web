@@ -56,7 +56,7 @@
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
                                     <li><a href="{{url('/ad-index')}}">Dashboard</a></li>
-                                    <li><a href="{{url('/productlist/'.$product->category->name)}}">{{$product->category->name}}</a></li>
+                                    <li><a href="{{url('/productlist/'.$product->category['name'])}}">{{$product->category['name']}}</a></li>
                                     <li class="active">{{$product->name}}</li>
                                 </ol>
                             </div>
@@ -113,10 +113,10 @@
                                                 <b>Price</b> : {{$product->price}} <i>vnd</i>   
                                             </li>
                                             <li class="list-group-item">
-                                                <b>Category</b> : {{$product->category->name}}  
+                                                <b>Category</b> : {{$product->category['name']}}  
                                             </li>
                                             <li class="list-group-item">
-                                                <b>Firm</b> : {{$product->firm->name}}  
+                                                <b>Firm</b> : {{$product->firm['name']}}  
                                             </li>
                                           </ul>
                                   </ul>
@@ -128,16 +128,16 @@
                                 </div>
                                   <ul class="list-group">
                                     <li class="list-group-item list-group-item-success">
-                                        <b>Category Name :</b> {{$product->category->name}}
+                                        <b>Category Name :</b> {{$product->category['name']}}
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Category Group :</b> {{$product->category->group}}
+                                        <b>Category Group :</b> {{$product->category['group']}}
                                     </li>
                                     <li class="list-group-item list-group-item-success  ">
-                                        <b>Firm Name :</b> {{$product->firm->name}}
+                                        <b>Firm Name :</b> {{$product->firm['name']}}
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Firm Information :</b> {{$product->firm->information}}
+                                        <b>Firm Information :</b> {{$product->firm['information']}}
                                     </li>
                                  </ul>
                                 </div>

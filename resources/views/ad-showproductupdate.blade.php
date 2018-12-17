@@ -56,7 +56,7 @@
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
                                     <li><a href="{{url('/ad-index')}}">Dashboard</a></li>
-                                    <li><a href="{{url('/productlist/'.$product->category->name)}}">{{$product->category->name}}</a></li>
+                                    <li><a href="{{url('/productlist/'.$product->category['name'])}}">{{$product->category['name']}}</a></li>
                                     <li class="active">{{$product->name}}</li>
                                 </ol>
                             </div>
@@ -145,7 +145,7 @@
 										      		$num_categories = count($category_name)
 										      	?>
 										      	@for($i = 0; $i < $num_categories; $i++)
-										      		@if($product->category->name == $category_name[$i]->name)
+										      		@if($product->category['name'] == $category_name[$i]->name)
 										      			<option selected>{{$category_name[$i]->name}}</option>
 										      		@else
 										      			<option>{{$category_name[$i]->name}}</option>
@@ -162,7 +162,7 @@
 										      		$num_firms = count($firm_name)
 										      	?>
 										      	@for($i = 0; $i < $num_firms; $i++)
-										      		@if($product->firm->name == $firm_name[$i]->name)
+										      		@if($product->firm['name'] == $firm_name[$i]->name)
 										      			<option selected>{{$firm_name[$i]->name}}</option>
 										      		@else
 										      			<option>{{$firm_name[$i]->name}}</option>
@@ -181,16 +181,16 @@
                                 </div>
                                   <ul class="list-group">
                                     <li class="list-group-item list-group-item-success">
-                                        <b>Category Name :</b> {{$product->category->name}}
+                                        <b>Category Name :</b> {{$product->category['name']}}
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Category Group :</b> {{$product->category->group}}
+                                        <b>Category Group :</b> {{$product->category['group']}}
                                     </li>
                                     <li class="list-group-item list-group-item-success  ">
-                                        <b>Firm Name :</b> {{$product->firm->name}}
+                                        <b>Firm Name :</b> {{$product->firm['name']}}
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Firm Information :</b> {{$product->firm->information}}
+                                        <b>Firm Information :</b> {{$product->firm['information']}}
                                     </li>
                                 </ul>
                         </div>

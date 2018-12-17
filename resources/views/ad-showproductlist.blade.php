@@ -59,8 +59,8 @@
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
                                     <li><a href="{{url('/ad-index')}}">Dashboard</a></li>
-                                    <li>{{$product_list[0]->category->group}}</li>
-                                    <li class="active">{{$product_list[0]->category->name}}</li>
+                                    <li>{{$product_list[0]->category['group']}}</li>
+                                    <li class="active">{{$product_list[0]->category['name']}}</li>
                                 </ol>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">{{$product_list[0]->category->name}} Table &emsp;</strong>
+                                <strong class="card-title">{{$product_list[0]->category['name']}} Table &emsp;</strong>
                                 <strong class="card-title"><a type="button" href="{{url('/ad-addproduct')}}" class="btn btn-info btn-lg">Add Item</a></strong>
                                 @if(!empty(Session::get('message')))
                                     <div class="alert alert-success" role="alert">
@@ -105,8 +105,8 @@
                                             <tr>
                                                 <td>{{$product->name}}</td>
                                                 <td>{{$product->color}}</td>
-                                                <td>{{$product->category->name}}</td>
-                                                <td>{{$product->firm->name}}</td>
+                                                <td>{{$product->category['name']}}</td>
+                                                <td>{{$product->firm['name']}}</td>
                                                 <td>{{$product->price}}</td>
                                                 <td><img src="{{asset($product->image[0]->link)}}" style="height: 100px; width: 100px"></td>
                                                 <td>
