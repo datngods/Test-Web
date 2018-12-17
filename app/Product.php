@@ -106,6 +106,7 @@ class Product extends Model
         $new_product->quantity = (int)$product_quantity;
         $new_product->description = $product_description;
         $new_product->price = (int)$product_price;
+        $new_product->salePrice = (int)$product_price;
         $new_product->categoryId = $category_id;
         $new_product->firmId = $firm_id;
         $new_product->save();
