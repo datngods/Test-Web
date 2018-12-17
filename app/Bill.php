@@ -89,7 +89,7 @@ class Bill extends Model
     }
 
     public static function getMaxID(){
-        $max = DB::table('bill')->select(max('billId'));
+        $max = DB::table('bill')->max('billId');
         return $max;
     }
 }
