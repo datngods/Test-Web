@@ -15,7 +15,7 @@ class Firm extends Model
     public $timestamps = false;
 
     public function product(){
-    	return $this->hasMany('App\Product', 'FirmId', 'firmId');
+    	return $this->hasMany('App\Product', 'firmId', 'firmId');
     }
 
 }

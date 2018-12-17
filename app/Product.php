@@ -30,7 +30,7 @@ class Product extends Model
     // }
 
     public function firm(){
-    	return $this->belongsTo('App\Firm', 'FirmId', 'firmId');
+    	return $this->belongsTo('App\Firm', 'firmId', 'firmId');
     }
 
     public function category(){
@@ -65,7 +65,7 @@ class Product extends Model
         if(!empty($firm)){
             $firm_id = $firm->firmId;
         } else {
-            $firm_id = $product->FirmId;
+            $firm_id = $product->firmId;
         }
 
         // $product->update([  'name'          => $product_name,
@@ -107,7 +107,7 @@ class Product extends Model
         $new_product->description = $product_description;
         $new_product->price = (int)$product_price;
         $new_product->categoryId = $category_id;
-        $new_product->FirmId = $firm_id;
+        $new_product->firmId = $firm_id;
         $new_product->save();
 
 
