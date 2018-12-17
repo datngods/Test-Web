@@ -236,13 +236,13 @@ class CheckoutController extends Controller
         $transStatus = "";
         if($hashValidated=="CORRECT" && $txnResponseCode=="0"){
             $transStatus = "Giao dịch thành công";
-            Bill::createBill($input['vpc_OrderInfo'], date('Y-m-d H:i:s'), session('user_id'), $input['vpc_Amount'], 'null');   
+            Bill::createBill(date('Y-m-d H:i:s'), session('user_id'), $input['vpc_Amount'], 'null');   
             $cart = session('cart');
             foreach($cart as $productId => $quantity){
                 $product = Product::find($productId);
                 $product->quantity = $product->quantity - $quantity;
                 $product->save();
-                BillDetail::createBillDetail($input['vpc_OrderInfo'], $productId, $quantity);
+                BillDetail::createBillDetail(count(Bill::all()), $productId, $quantity);
            }
             
         }elseif ($hashValidated=="INVALID HASH" && $txnResponseCode=="0"){

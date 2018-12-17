@@ -67,9 +67,8 @@ class Bill extends Model
 
     }
 
-    public static function createBill($billId, $date, $userId, $total, $checked){
+    public static function createBill($date, $userId, $total, $checked){
         $bill = new Bill();
-        $bill->billId = $billId;
         $bill->date = $date;
         $bill->userId = $userId;
         $bill->total = $total * 0.01;
