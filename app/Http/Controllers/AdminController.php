@@ -21,8 +21,7 @@ class AdminController extends Controller
     public function index()
     {
         if (empty(session('admin_id'))) {
-            Product::createProduct();
-            Category::createCategory();
+            //Category::createCategory();
             Firm::createFirm();
             Image::createImage();
             $admin = Admin::findAdminByInfor('datngo.bk@gmail.com', '123123');
