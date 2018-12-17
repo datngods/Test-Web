@@ -27,6 +27,19 @@ class Bill extends Model
     	return $bill_list;
     }
 
+    public static function checkBill($userId, $productId){
+        $bill = DB::table('bill')->where([['userId', '=', $userId], ['productId', '=', $productId]])->select(
+            'bill.billId',
+            'bill.date',
+            'bill.total',
+            'bill.checked'
+        )
+        ->first();
+        if(!empty($bill) && $bill->checked =='checked')
+            return true;
+        return false;
+    }
+
     public static function getBillsOfUser($id_user){
         $bills = DB::table('bill')->where('bill.userId', '=', $id_user)->select(
             'bill.billId',
