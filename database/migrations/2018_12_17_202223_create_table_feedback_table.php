@@ -17,8 +17,8 @@ class CreateTableFeedbackTable extends Migration
             $table->increments('id');
             $table->integer('userId');
             $table->integer('productId');
-            $table->integer('star')->default('null');
-            $table->string('comment')->default('null');
+            $table->integer('star')->default(0);
+            $table->string('comment')->default(' ');
             $table->dateTime('date');
             $table->timestamps();
         });
