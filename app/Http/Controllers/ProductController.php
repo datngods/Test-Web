@@ -104,9 +104,9 @@ class ProductController extends Controller
     {   
         if (Bill::checkBill(session('user_id'), $request->get('id'))) {
             Feedback::update_feedback_star(session('user_id'), $request->get('id'), $request->get('rating'), $request->get('time'));
-            return 'success';
+            return 'Success';
         }
-        return 'fail';
+        return 'Fail';
     }
 
     public function update_comment(Request $request)
@@ -115,7 +115,7 @@ class ProductController extends Controller
             $feedback_star = Feedback::update_feedback_comment(session('user_id'), $request->get('id'), $request->get('comment'), $request->get('time'));
             return $feedback_star;
         }
-        return 0;
+        return 'Fail';
         
     }
 

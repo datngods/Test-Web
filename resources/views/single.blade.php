@@ -375,13 +375,17 @@ label.star:before {
                 type: 'GET',
                 url: {{$product->productId}}+'/update_comment?comment=' + val + '&id='+{{$product->productId}}+'&time='+datetime, 
                   success: function(data){
-                  	if($('.'+'rm{{session('user_id')}}'))
+                  	if(data!='Fail'){
+                  		if($('.'+'rm{{session('user_id')}}'))
                   		$('.'+'rm{{session('user_id')}}').remove();
                     $('#reviews').append('<div class="additional_info_sub_grid_rightl rm{{session('user_id')}}"><a>'+'{{session('username')}}'+'</a><h5>'+datetime+'</h5><p>'+val+'.</p></div><div class="additional_info_sub_grid_rightr rm{{session('user_id')}}"><div class="rating">');
                     for (var i = 0; i < data ; i++) {
                     	$('#reviews').append('<div class="rating-left rm{{session('user_id')}}"><img src="{{asset("images_admin/star-.png")}}" alt=" " class="img-responsive"></div>');
                     }
-                    $('#reviews').append('<div class="clearfix"> </div></div></div>');   
+                    $('#reviews').append('<div class="clearfix"> </div></div></div>');
+                  	}
+                  	else
+                  		alert(data);   
                   }});
                });
             });
