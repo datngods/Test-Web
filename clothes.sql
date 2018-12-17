@@ -452,7 +452,7 @@ CREATE TABLE product (
 -- Đang đổ dữ liệu cho bảng product
 --
 
-INSERT INTO product (productId, name, size, color, quantity, description, price, salePrice, categoryId, FirmId) VALUES
+INSERT INTO product VALUES
 (1, 'Metallic Plunge Halter Mini Bodycon Dress', '10', 'SILVER', 100, '95% Polyester 5% Elastane. Machine Wash. Model Wears UK Size 10.', 400000, 400000, 2, 1),
 (2, 'Sequin & Mesh Strappy Maxi Dress', '10', 'ROSE', 100, '100% Polyester. Hand Wash. Model Wears UK Size 10.', 400000, 400000, 2, 1),
 (3, 'Sequin Long Sleeve Plunge Bodycon Dress', '10', 'RED', 100, '100% Polyester. Hand Wash. Model Wears UK Size 10.', 400000, 400000, 2, 2),
@@ -518,7 +518,7 @@ INSERT INTO product (productId, name, size, color, quantity, description, price,
 (63, 'Double Layer High Waist Cycling Shorts', '10', 'BLACK', 100, '5% ELASTANE, 95% POLYESTER. MACHINE WASH ONLY. KEEP AWAY FROM FIRE. MODEL WEARS A SIZE 10', 100000, 100000, 12, 4),
 (64, 'Slinky Longline Cycling Shorts', '10', 'STONE', 100, '5% ELASTANE, 95% POLYESTER. MACHINE WASH ONLY. KEEP AWAY FROM FIRE. MODEL WEARS A SIZE 10', 100000, 100000, 12, 4),
 (65, 'Slinky Cycling Short', '10', 'SAGE', 100, '5% ELASTANE, 95% POLYESTER. MACHINE WASH ONLY. KEEP AWAY FROM FIRE. MODEL WEARS A SIZE 10', 100000, 100000, 12, 4),
-(66, 'abc', '14', 'ABC', -1, '123', 123, NULL, 2, 1);
+(66, 'abc', '14', 'ABC', -1, '123', 123, 12, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -538,7 +538,7 @@ CREATE TABLE user (
 -- Đang đổ dữ liệu cho bảng user
 --
 
-INSERT INTO user (userId, userName, password, email, address) VALUES
+INSERT INTO users VALUES
 (1, 'Trần Quang Trung', '123456', 'trungbka1997@gmail.com', 'Số 176, Trương Định, Hoàng Mai, Hà Nội'),
 (2, 'abc', '123456', 'abc@gmail.com', 'Số 176, Trương Định, Hoàng Mai, Hà Nội'),
 (3, 'bcd', '123456', 'bcd@gmail.com', 'Số 176, Trương Định, Hoàng Mai, Hà Nội'),

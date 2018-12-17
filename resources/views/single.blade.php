@@ -57,7 +57,7 @@ label.star:before {
 			<ul>
 				<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home/</a> <i>/</i></li>
 			<li><a href="/products/{{$category}}">{{$category}}</a><i>/</i></li>
-			    <li>{{$product->name}}</li>
+			    <li>{{$product['name']}}</li>
 			</ul>
 		</div>
 	</div>
