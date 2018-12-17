@@ -52,7 +52,7 @@
 							</div>
 						</ul>
 					</li>
-					<li><a href="{{url('/about')}}">About Us</a></li>
+					<li><a href="/about">About Us</a></li>
 					<li><a href="{{url('/short_codes')}}">Short Codes</a></li>
 					<li><a href="{{url('/mail')}}">Mail Us</a></li>
 				</ul>
