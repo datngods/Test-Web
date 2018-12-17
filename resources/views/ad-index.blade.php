@@ -224,7 +224,7 @@
                                                 <td>  <span class="name">{{$newest_items[$i]->name}}</span> </td>
                                                 <td> <span class="product">{{$newest_items[$i]->color}}</span> </td>
                                                 <td><span class="count">{{$newest_items[$i]->price}}</span></td>
-                                                <td>  <span class="name">{{$newest_items[$i]->Firm->name}}</span> </td>
+                                                <td>  <span class="name">{{$newest_items[$i]->Firm['name']}}</span> </td>
                                                 @if($newest_items[$i]->quantity > 10)
                                                 <td>
                                                     <a href="{{asset('/detailproduct/'.$newest_items[$i]->productId)}}"><span class="badge badge-complete">Detail</span></a>
