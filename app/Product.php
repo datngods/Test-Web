@@ -84,7 +84,7 @@ class Product extends Model
         $product->description = $product_description;
         $product->price = (int)$product_price;
         $product->categoryId = $category_id;
-        $product->FirmId = $firm_id;
+        $product->firmId = $firm_id;
         
         $product->save();
     }
