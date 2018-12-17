@@ -13,10 +13,6 @@ class BillDetail extends Model
     public $timestamps = false;
     protected $table = "billdetail";
 
-    public function bill(){
-    	return $this->beLongsto("App\Bill", "billId", "billId");
-    }
-
     public static function createBillDetail($billId, $productId, $quantity){
     	$bill_detail = new BillDetail();
     	$bill_detail->billId = $billId;
