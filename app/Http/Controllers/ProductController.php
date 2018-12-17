@@ -10,7 +10,7 @@ use App\Feedback;
 use App\Category;
 use App\Image;
 use App\Firm;
-use App\Bill;
+use App\BillDetail;
 
 class ProductController extends Controller
 {
@@ -102,7 +102,7 @@ class ProductController extends Controller
 
     public function update_rating(Request $request)
     {   
-        if (Bill::checkBill(session('user_id'), $request->get('id'))) {
+        if (BillDetail::checkBill(session('user_id'), $request->get('id'))) {
             Feedback::update_feedback_star(session('user_id'), $request->get('id'), $request->get('rating'), $request->get('time'));
             return 'Success';
         }
@@ -111,7 +111,7 @@ class ProductController extends Controller
 
     public function update_comment(Request $request)
     {   
-        if (Bill::checkBill(session('user_id'), $request->get('id'))) {
+        if (BillDetail::checkBill(session('user_id'), $request->get('id'))) {
             $feedback_star = Feedback::update_feedback_comment(session('user_id'), $request->get('id'), $request->get('comment'), $request->get('time'));
             return $feedback_star;
         }
