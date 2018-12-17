@@ -17,16 +17,4 @@ class Admin extends Model
     	return $admin;
     }
 
-    public static function createAccount(){
-    	$admin = new Admin();
-    	$admin->userName = 'datngo.bk';
-    	$admin->password = '123123';
-    	$admin->email = 'datngo.bk@gmail.com';
-    	$admin->address = 'Ha Noi';
-    	$admin->phoneNumber = '0981192092';
-    	$admin->linkFacebook = 'test';
-    	$admin->linkInstagram = 'test';
-    	$admin->linkTwitter = 'test';
-    	$admin->save();
-   	}
 }
