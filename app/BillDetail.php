@@ -12,6 +12,7 @@ class BillDetail extends Model
 {
     public $timestamps = false;
     protected $table = "billdetail";
+    protected $primaryKey = "id";
 
     public static function createBillDetail($billId, $productId, $quantity){
     	$bill_detail = new BillDetail();

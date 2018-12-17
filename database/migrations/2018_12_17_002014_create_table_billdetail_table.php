@@ -14,6 +14,7 @@ class CreateTableBilldetailTable extends Migration
     public function up()
     {
         Schema::create('billdetail', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('billId');
             $table->integer('productId');
             $table->integer('quantity');

@@ -14,6 +14,7 @@ class CreateTableFeedbackTable extends Migration
     public function up()
     {
         Schema::create('feedback', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('userId');
             $table->integer('productId');
             $table->integer('star');
