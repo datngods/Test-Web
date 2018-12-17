@@ -169,7 +169,7 @@ class Product extends Model
         $product->description = '95% Polyester 5% Elastane. Machine Wash. ';
         $product->price = 100000;
         $product->salePrice = 100000;
-        $product->caregoryId = 2;
+        $product->categoryId = 2;
         $product->firmId = 1;
         $product->save();
     }
