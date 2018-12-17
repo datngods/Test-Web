@@ -19,7 +19,7 @@ class CreateTableFeedbackTable extends Migration
             $table->integer('productId');
             $table->integer('star')->default(0);
             $table->string('comment')->default(' ');
-            $table->dateTime('date');
+            $table->dateTime('date')->default(date('Y-m-d H:i:s'));
             $table->timestamps();
         });
     }
