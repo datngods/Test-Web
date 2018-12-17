@@ -51,7 +51,7 @@ class Bill extends Model
  		$bill_infos = '';
         $num = 0;
         $billId = 0;
-        $date = date();
+        $date = date('Y-m-d H:i:s');
         $userId = 0;
         $email = '';
         $user_name = '';
