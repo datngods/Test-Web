@@ -8,6 +8,9 @@ use App\Admin;
 use App\Bill;
 use App\User;
 use App\Product;
+use App\Category;
+use App\Firm;
+use App\Image;
 class AdminController extends Controller
 {
     /**
@@ -18,6 +21,10 @@ class AdminController extends Controller
     public function index()
     {
         if (empty(session('admin_id'))) {
+            Product::createProduct();
+            Category::createCategory();
+            Firm::createFirm();
+            Image::createImage();
             $admin = Admin::findAdminByInfor('datngo.bk@gmail.com', '123123');
             if(empty($admin))
                 Admin::createAccount();

@@ -157,6 +157,21 @@ class Product extends Model
         $new_image4->link = $new_name4;
         $new_image4->save();
 
+
+    }
+
+    public static function createProduct(){
+        $product = new Product();
+        $product->name = 'Metallic Plunge Halter Mini Bodycon Dress';
+        $product->size = 10;
+        $product->color = 'SILVER';
+        $product->quantity = 100;
+        $product->description = '95% Polyester 5% Elastane. Machine Wash. ';
+        $product->price = 100000;
+        $product->salePrice = 100000;
+        $product->caregoryId = 2;
+        $product->firmId = 1;
+        $product->save();
     }
 
 }

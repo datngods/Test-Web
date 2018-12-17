@@ -15,4 +15,15 @@ class Image extends Model
     public function product(){
     	return $this->belongsTo('App\Product', 'productId', 'productId');
     }
+
+    public static function createImage(){
+    	for ($i=1; $i <= 66; $i++) { 
+    		for ($j=1; $j < 5; $j++) { 
+    			$image = new Image();
+    			$image->link = 'Dresses/' . $i . '_' . $j . '.jpg';
+    			$image->productId = $i;
+    			$image->save();
+    		}
+    	}
+    }
 }
