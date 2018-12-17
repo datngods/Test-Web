@@ -17,6 +17,7 @@ class CartController extends Controller
        $commonGoup = Category::where('group','Common')->get();
        $beachGroup = Category::where('group','Beach')->get();
        $products_cart = collect([]);
+       $billId = count(Bill::all()) + 1;
        $cart = 0;
        if(!empty(session('cart'))){
             $cart = session('cart');
@@ -36,7 +37,7 @@ class CartController extends Controller
         // return $products_cart[0]->image[0]->link;
 
        return view('checkout', ['dressGroup'=>$dressGroup,'commonGroup'=>$commonGoup, 'beachGroup'=>$beachGroup,
-       "products"=>$products_cart]);
+       "products"=>$products_cart, 'billId'=>$billId]);
     }
 
 
