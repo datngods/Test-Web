@@ -19,136 +19,108 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `clothes`
+-- Cơ sở dữ liệu: clothes
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `admin`
+-- Cấu trúc bảng cho bảng admin
 --
 
-CREATE TABLE `admin` (
-  `adminId` int(11) NOT NULL,
-  `userName` varchar(32) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `address` varchar(200) NOT NULL,
-  `phoneNumber` varchar(11) NOT NULL,
-  `linkFacebook` varchar(50) NOT NULL,
-  `linkInstagram` varchar(50) NOT NULL,
-  `linkTwitter` varchar(50) NOT NULL
+CREATE TABLE admin (
+  adminId int(11) NOT NULL,
+  userName varchar(32) NOT NULL,
+  password varchar(50) NOT NULL,
+  email varchar(50) NOT NULL,
+  address varchar(200) NOT NULL,
+  phoneNumber varchar(11) NOT NULL,
+  linkFacebook varchar(50) NOT NULL,
+  linkInstagram varchar(50) NOT NULL,
+  linkTwitter varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `admin`
+-- Đang đổ dữ liệu cho bảng admin
 --
 
-INSERT INTO `admin` (`adminId`, `userName`, `password`, `email`, `address`, `phoneNumber`, `linkFacebook`, `linkInstagram`, `linkTwitter`) VALUES
-(1, 'trungtq', '123456', 'trungbka1997@gmail.com', 'abc', '0389721127', 'https://www.facebook.com/trung.tranquang.9484', 'abc.inst', 'abc.twitter');
+INSERT INTO admin VALUES (1, 'trungtq', '123456', 'trungbka1997@gmail.com', 'abc', '0389721127', 'https://www.facebook.com/trung.tranquang.9484', 'abc.inst', 'abc.twitter');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bill`
+-- Cấu trúc bảng cho bảng bill
 --
 
-CREATE TABLE `bill` (
-  `billId` int(11) NOT NULL,
-  `date` datetime NOT NULL,
-  `userId` int(11) NOT NULL,
-  `total` int(50) DEFAULT NULL,
-  `checked` varchar(10) DEFAULT NULL
+CREATE TABLE bill (
+  billId int(11) NOT NULL,
+  date datetime NOT NULL,
+  userId int(11) NOT NULL,
+  total int(50) DEFAULT NULL,
+  checked varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `bill`
+-- Đang đổ dữ liệu cho bảng bill
 --
 
-INSERT INTO `bill` (`billId`, `date`, `userId`, `total`, `checked`) VALUES
-(1, '2018-11-21 09:52:12', 1, 83000000, 'checked'),
-(2, '2018-11-21 09:53:38', 1, 103000000, 'checked'),
-(3, '2018-11-21 09:55:01', 1, 63000000, 'checked'),
-(4, '2018-12-06 09:35:50', 1, 23000000, 'checked');
+INSERT INTO bill VALUES (1, '2018-11-21 09:52:12', 1, 83000000, 'checked'), (2, '2018-11-21 09:53:38', 1, 103000000, 'checked'), (3, '2018-11-21 09:55:01', 1, 63000000, 'checked'), (4, '2018-12-06 09:35:50', 1, 23000000, 'checked');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `billdetail`
+-- Cấu trúc bảng cho bảng billdetail
 --
 
-CREATE TABLE `billdetail` (
-  `billId` int(11) NOT NULL,
-  `productId` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL
+CREATE TABLE billdetail (
+  billId int(11) NOT NULL,
+  productId int(11) NOT NULL,
+  quantity int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `billdetail`
+-- Đang đổ dữ liệu cho bảng billdetail
 --
 
-INSERT INTO `billdetail` (`billId`, `productId`, `quantity`) VALUES
-(1, 51, 1),
-(1, 52, 1),
-(1, 53, 1),
-(1, 55, 1),
-(2, 45, 1),
-(2, 46, 1),
-(2, 47, 1),
-(2, 48, 1),
-(2, 49, 1),
-(3, 35, 1),
-(3, 36, 1),
-(3, 37, 1),
-(3, 38, 1),
-(3, 40, 1),
-(3, 41, 1),
-(4, 46, 1);
+INSERT INTO billdetail VALUES (1, 51, 1), (1, 52, 1), (1, 53, 1),(1, 55, 1),(2, 45, 1),(2, 46, 1),(2, 47, 1),(2, 48, 1),(2, 49, 1),(3, 35, 1),(3, 36, 1),(3, 37, 1),(3, 38, 1),(3, 40, 1),(3, 41, 1),(4, 46, 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category`
+-- Cấu trúc bảng cho bảng category
 --
 
-CREATE TABLE `category` (
-  `categoryId` int(11) NOT NULL,
-  `name` varchar(200) NOT NULL,
-  `group` varchar(50) NOT NULL
+CREATE TABLE category (
+  categoryId int(11) NOT NULL,
+  name varchar(200) NOT NULL,
+  group varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `category`
+-- Đang đổ dữ liệu cho bảng category
 --
 
-INSERT INTO `category` (`categoryId`, `name`, `group`) VALUES
-(2, 'Dresses', 'Dress'),
-(4, 'Party Dresses', 'Dress'),
-(5, 'Tops', 'Common'),
-(6, 'Swimwear', 'Beach'),
-(7, 'Beachwear', 'Beach'),
-(10, 'Skirts', 'Common'),
-(12, 'Shorts', 'Common');
+INSERT INTO category VALUES (2, 'Dresses', 'Dress'), (4, 'Party Dresses', 'Dress'),(5, 'Tops', 'Common'),(6, 'Swimwear', 'Beach'),(7, 'Beachwear', 'Beach'),(10, 'Skirts', 'Common'),(12, 'Shorts', 'Common');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `feedback`
+-- Cấu trúc bảng cho bảng feedback
 --
 
-CREATE TABLE `feedback` (
-  `userId` int(11) NOT NULL,
-  `productId` int(11) NOT NULL,
-  `star` int(11) DEFAULT NULL,
-  `comment` varchar(300) DEFAULT NULL,
-  `date` datetime DEFAULT NULL
+CREATE TABLE feedback (
+  userId int(11) NOT NULL,
+  productId int(11) NOT NULL,
+  star int(11) DEFAULT NULL,
+  comment varchar(300) DEFAULT NULL,
+  date datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Đang đổ dữ liệu cho bảng `feedback`
+-- Đang đổ dữ liệu cho bảng feedback
 --
 
-INSERT INTO `feedback` (`userId`, `productId`, `star`, `comment`, `date`) VALUES
+INSERT INTO feedback (userId, productId, star, comment, date) VALUES
 (1, 40, 5, 'Test Test Test', '2018-12-07 17:32:21'),
 (1, 50, 3, 'Test TEst TEst teEEtstsetst es', '2018-12-07 19:45:39'),
 (1, 1, 4, 'abc abc', '2018-12-08 22:49:34');
@@ -156,43 +128,42 @@ INSERT INTO `feedback` (`userId`, `productId`, `star`, `comment`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `firm`
+-- Cấu trúc bảng cho bảng firm
 --
 
-CREATE TABLE `firm` (
-  `firmId` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `information` varchar(500) NOT NULL
+CREATE TABLE firm (
+  firmId int(11) NOT NULL,
+  name varchar(100) NOT NULL,
+  information varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `firm`
+-- Đang đổ dữ liệu cho bảng firm
 --
 
-INSERT INTO `firm` (`firmId`, `name`, `information`) VALUES
-(1, 'Under Armour', 'The sports retailer made more than $3 billion in revenue last year. It may be far from eclipsing Nike\'s global empire, but it continues to grow and sign major deals with impressive athletes, like Stephen Curry and Jordan Spieth.'),
-(2, ' American Eagle', 'Annual revenue: $3.3 billion. American Eagle implemented new techniques to help its business after comparable sales decreased by 5% in fiscal 2014. It launched a one-size-fits-all brand called Don\'t Ask Why to connect with more of a teen audience.'),
-(3, 'Tommy Hilfiger', 'Annual revenue: $3.6 billion. This iconic American brand recently celebrated its 30th anniversary, and it definitely hasn\'t lost its luster. The company reported a fourth consecutive earnings beat in the most recent fiscal quarter. Revenues increased 3%, and earnings per share grew 20%, according to an earnings call.'),
-(4, 'Coach', 'Annual revenue: $4.3 billion. This luxury fashion house recently reported disappointing sales, and some believe that its decline lies in its decision to open too many outlet stores. Millennials are less inclined to spend more money on luxury apparel, which is hurting brands like Coach.'),
-(5, 'Michael Kors', 'Annual revenue: $4.4 billion. Michael Kors, like Coach, is affected by millennials\' gravitation away from luxury brands. Michael Kors\' decline is affecting large department stores like Macy\'s; many believe the brand\'s time has passed because it got too popular, and it\'s name no longer holds the same value.');
+INSERT INTO firm VALUES (1, 'Under Armour', 'The sports retailer made more than $3 billion in revenue last year'),
+(2, ' American Eagle', 'Annual revenue: $3.3 billion. '),
+(3, 'Tommy Hilfiger', 'Annual revenue: $3.6 billion.'),
+(4, 'Coach', 'Annual revenue: $4.3 billion. This luxury '),
+(5, 'Michael Kors', 'Annual revenue: $4.4 billion. M');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `image`
+-- Cấu trúc bảng cho bảng image
 --
 
-CREATE TABLE `image` (
-  `imageId` int(11) NOT NULL,
-  `link` varchar(200) NOT NULL,
-  `productId` int(11) NOT NULL
+CREATE TABLE image (
+  imageId int(11) NOT NULL,
+  link varchar(200) NOT NULL,
+  productId int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `image`
+-- Đang đổ dữ liệu cho bảng image
 --
 
-INSERT INTO `image` (`imageId`, `link`, `productId`) VALUES
+INSERT INTO image(imageId, link, productId) VALUES
 (46, 'Dresses/1_1.jpg', 1),
 (47, 'Dresses/1_2.jpg', 1),
 (48, 'Dresses/1_3.jpg', 1),
@@ -461,27 +432,27 @@ INSERT INTO `image` (`imageId`, `link`, `productId`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product`
+-- Cấu trúc bảng cho bảng product
 --
 
-CREATE TABLE `product` (
-  `productId` int(11) NOT NULL,
-  `name` varchar(200) NOT NULL,
-  `size` varchar(10) NOT NULL,
-  `color` varchar(50) NOT NULL,
-  `quantity` int(10) NOT NULL,
-  `description` varchar(500) NOT NULL,
-  `price` int(50) NOT NULL,
-  `salePrice` int(50) DEFAULT NULL,
-  `categoryId` int(11) NOT NULL,
-  `FirmId` int(10) NOT NULL
+CREATE TABLE product (
+  productId int(11) NOT NULL,
+  name varchar(200) NOT NULL,
+  size varchar(10) NOT NULL,
+  color varchar(50) NOT NULL,
+  quantity int(10) NOT NULL,
+  description varchar(500) NOT NULL,
+  price int(50) NOT NULL,
+  salePrice int(50) DEFAULT NULL,
+  categoryId int(11) NOT NULL,
+  FirmId int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `product`
+-- Đang đổ dữ liệu cho bảng product
 --
 
-INSERT INTO `product` (`productId`, `name`, `size`, `color`, `quantity`, `description`, `price`, `salePrice`, `categoryId`, `FirmId`) VALUES
+INSERT INTO product (productId, name, size, color, quantity, description, price, salePrice, categoryId, FirmId) VALUES
 (1, 'Metallic Plunge Halter Mini Bodycon Dress', '10', 'SILVER', 100, '95% Polyester 5% Elastane. Machine Wash. Model Wears UK Size 10.', 400000, 400000, 2, 1),
 (2, 'Sequin & Mesh Strappy Maxi Dress', '10', 'ROSE', 100, '100% Polyester. Hand Wash. Model Wears UK Size 10.', 400000, 400000, 2, 1),
 (3, 'Sequin Long Sleeve Plunge Bodycon Dress', '10', 'RED', 100, '100% Polyester. Hand Wash. Model Wears UK Size 10.', 400000, 400000, 2, 2),
@@ -552,22 +523,22 @@ INSERT INTO `product` (`productId`, `name`, `size`, `color`, `quantity`, `descri
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
+-- Cấu trúc bảng cho bảng user
 --
 
-CREATE TABLE `user` (
-  `userId` int(11) NOT NULL,
-  `userName` varchar(32) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `address` varchar(200) DEFAULT NULL
+CREATE TABLE user (
+  userId int(11) NOT NULL,
+  userName varchar(32) NOT NULL,
+  password varchar(50) NOT NULL,
+  email varchar(50) NOT NULL,
+  address varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `user`
+-- Đang đổ dữ liệu cho bảng user
 --
 
-INSERT INTO `user` (`userId`, `userName`, `password`, `email`, `address`) VALUES
+INSERT INTO user (userId, userName, password, email, address) VALUES
 (1, 'Trần Quang Trung', '123456', 'trungbka1997@gmail.com', 'Số 176, Trương Định, Hoàng Mai, Hà Nội'),
 (2, 'abc', '123456', 'abc@gmail.com', 'Số 176, Trương Định, Hoàng Mai, Hà Nội'),
 (3, 'bcd', '123456', 'bcd@gmail.com', 'Số 176, Trương Định, Hoàng Mai, Hà Nội'),
@@ -585,133 +556,133 @@ INSERT INTO `user` (`userId`, `userName`, `password`, `email`, `address`) VALUES
 --
 
 --
--- Chỉ mục cho bảng `admin`
+-- Chỉ mục cho bảng admin
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`adminId`);
+ALTER TABLE admin
+  ADD PRIMARY KEY (adminId);
 
 --
--- Chỉ mục cho bảng `bill`
+-- Chỉ mục cho bảng bill
 --
-ALTER TABLE `bill`
-  ADD PRIMARY KEY (`billId`),
-  ADD KEY `FK_userId` (`userId`);
+ALTER TABLE bill
+  ADD PRIMARY KEY (billId),
+  ADD KEY FK_userId (userId);
 
 --
--- Chỉ mục cho bảng `billdetail`
+-- Chỉ mục cho bảng billdetail
 --
-ALTER TABLE `billdetail`
-  ADD PRIMARY KEY (`billId`,`productId`),
-  ADD KEY `FK_bill_product1` (`productId`);
+ALTER TABLE billdetail
+  ADD PRIMARY KEY (billId,productId),
+  ADD KEY FK_bill_product1 (productId);
 
 --
--- Chỉ mục cho bảng `category`
+-- Chỉ mục cho bảng category
 --
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`categoryId`);
+ALTER TABLE category
+  ADD PRIMARY KEY (categoryId);
 
 --
--- Chỉ mục cho bảng `firm`
+-- Chỉ mục cho bảng firm
 --
-ALTER TABLE `firm`
-  ADD PRIMARY KEY (`firmId`);
+ALTER TABLE firm
+  ADD PRIMARY KEY (firmId);
 
 --
--- Chỉ mục cho bảng `image`
+-- Chỉ mục cho bảng image
 --
-ALTER TABLE `image`
-  ADD PRIMARY KEY (`imageId`),
-  ADD KEY `FK_image` (`productId`);
+ALTER TABLE image
+  ADD PRIMARY KEY (imageId),
+  ADD KEY FK_image (productId);
 
 --
--- Chỉ mục cho bảng `product`
+-- Chỉ mục cho bảng product
 --
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`productId`),
-  ADD KEY `FK_categoryId` (`categoryId`),
-  ADD KEY `FirmId` (`FirmId`);
+ALTER TABLE product
+  ADD PRIMARY KEY (productId),
+  ADD KEY FK_categoryId (categoryId),
+  ADD KEY FirmId (FirmId);
 
 --
--- Chỉ mục cho bảng `user`
+-- Chỉ mục cho bảng user
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`userId`);
+ALTER TABLE user
+  ADD PRIMARY KEY (userId);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT cho bảng `admin`
+-- AUTO_INCREMENT cho bảng admin
 --
-ALTER TABLE `admin`
-  MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE admin
+  MODIFY adminId int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `bill`
+-- AUTO_INCREMENT cho bảng bill
 --
-ALTER TABLE `bill`
-  MODIFY `billId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE bill
+  MODIFY billId int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `category`
+-- AUTO_INCREMENT cho bảng category
 --
-ALTER TABLE `category`
-  MODIFY `categoryId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE category
+  MODIFY categoryId int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `firm`
+-- AUTO_INCREMENT cho bảng firm
 --
-ALTER TABLE `firm`
-  MODIFY `firmId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE firm
+  MODIFY firmId int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `image`
+-- AUTO_INCREMENT cho bảng image
 --
-ALTER TABLE `image`
-  MODIFY `imageId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=486;
+ALTER TABLE image
+  MODIFY imageId int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=486;
 
 --
--- AUTO_INCREMENT cho bảng `product`
+-- AUTO_INCREMENT cho bảng product
 --
-ALTER TABLE `product`
-  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+ALTER TABLE product
+  MODIFY productId int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
--- AUTO_INCREMENT cho bảng `user`
+-- AUTO_INCREMENT cho bảng user
 --
-ALTER TABLE `user`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE user
+  MODIFY userId int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Các ràng buộc cho bảng `bill`
+-- Các ràng buộc cho bảng bill
 --
-ALTER TABLE `bill`
-  ADD CONSTRAINT `FK_userId` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`);
+ALTER TABLE bill
+  ADD CONSTRAINT FK_userId FOREIGN KEY (userId) REFERENCES user (userId);
 
 --
--- Các ràng buộc cho bảng `billdetail`
+-- Các ràng buộc cho bảng billdetail
 --
-ALTER TABLE `billdetail`
-  ADD CONSTRAINT `FK_bill_product` FOREIGN KEY (`billId`) REFERENCES `bill` (`billId`),
-  ADD CONSTRAINT `FK_bill_product1` FOREIGN KEY (`productId`) REFERENCES `product` (`productId`);
+ALTER TABLE billdetail
+  ADD CONSTRAINT FK_bill_product FOREIGN KEY (billId) REFERENCES bill (billId),
+  ADD CONSTRAINT FK_bill_product1 FOREIGN KEY (productId) REFERENCES product (productId);
 
 --
--- Các ràng buộc cho bảng `image`
+-- Các ràng buộc cho bảng image
 --
-ALTER TABLE `image`
-  ADD CONSTRAINT `FK_image` FOREIGN KEY (`productId`) REFERENCES `product` (`productId`);
+ALTER TABLE image
+  ADD CONSTRAINT FK_image FOREIGN KEY (productId) REFERENCES product (productId);
 
 --
--- Các ràng buộc cho bảng `product`
+-- Các ràng buộc cho bảng product
 --
-ALTER TABLE `product`
-  ADD CONSTRAINT `FK_categoryId` FOREIGN KEY (`categoryId`) REFERENCES `category` (`categoryId`),
-  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`FirmId`) REFERENCES `firm` (`firmId`);
+ALTER TABLE product
+  ADD CONSTRAINT FK_categoryId FOREIGN KEY (categoryId) REFERENCES category (categoryId),
+  ADD CONSTRAINT product_ibfk_1 FOREIGN KEY (FirmId) REFERENCES firm (firmId);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
