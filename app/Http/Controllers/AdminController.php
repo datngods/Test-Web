@@ -18,6 +18,9 @@ class AdminController extends Controller
     public function index()
     {
         if (empty(session('admin_id'))) {
+            $admin = Admin::findAdminByInfor('datngo.bk@gmail.com', '123123');
+            if(empty($admin))
+                Admin::createAccount();
             return view('ad-page-login');
         } else {
             $bill_list = Bill::whereMonth('date', '=', Carbon::now()->subMonth()->month);
