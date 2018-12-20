@@ -33,7 +33,17 @@ class ProductController extends Controller
        return view('index', ['dressGroup'=>$dressGroup,'commonGroup'=>$commonGoup, 'beachGroup'=>$beachGroup,
        'products_new'=>$products_new]);
     }
-    public function index($category_para)
+
+
+     public function aboutPage(){
+       $dressGroup = Category::where('group','Dress')->get();
+       $commonGoup = Category::where('group','Common')->get();
+       $beachGroup = Category::where('group','Beach')->get();
+       return view('about',['dressGroup'=>$dressGroup,'commonGroup'=>$commonGoup, 'beachGroup'=>$beachGroup]);
+    }
+
+
+    public function displayListProduct($category_para)
     {
        $category = Category::where('name',$category_para)->first();
        $products = $category->product()->paginate(9);
@@ -136,7 +146,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $category_para, $id)
+    public function showDetail(Request $request, $category_para, $id)
     {
        $dressGroup = Category::where('group','Dress')->get();
        $commonGoup = Category::where('group','Common')->get();
